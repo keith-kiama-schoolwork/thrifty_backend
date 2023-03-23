@@ -5,7 +5,7 @@ This is the backend of an an application whereby the user can offer a trade with
 
 ## What was used
 
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/keithkiama/phase-2-group-2-nasa-group-project/blob/master/LICENSE)
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/keith-kiama-schoolwork/thrifty_backend/blob/main/LICENSE)
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat&logo=postman&logoColor=white)
 ![Rails](https://img.shields.io/badge/rails-%23CC0000.svg?style=flat&logo=ruby-on-rails&logoColor=white) ![Ruby](https://img.shields.io/badge/ruby-%23CC342D.svg?style=flat&logo=ruby&logoColor=white)
 
