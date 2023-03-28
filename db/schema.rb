@@ -20,8 +20,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_28_111415) do
     t.string "product_id"
     t.string "user_id"
     t.string "comment"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "products", force: :cascade do |t|
@@ -34,8 +32,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_28_111415) do
   create_table "user_reviews", force: :cascade do |t|
     t.string "user_id"
     t.string "comment"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
