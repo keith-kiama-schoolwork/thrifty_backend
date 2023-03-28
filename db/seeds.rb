@@ -21,4 +21,12 @@ Account.create(account_number: "0987654321", user_id: "2")
 Product.create(image_url: "https://example.com/image1.png", name: "Product 1", price: "10.00", category: categories.sample)
 Product.create(image_url: "https://example.com/image2.png", name: "Product 2", price: "20.00", category: categories.sample)
 
-puts "DOne seeding...🌳🌳"
+# product reviews seed data
+ProductReview.create(user_id: "1", product_id: 1, comment: "Good Product 1")
+ProductReview.create(user_id: "2", product_id: 2, comment: "Good Product 2")
+
+# user reviews seed data
+UserReview.create(user_id: "1", comment: "Love this website")
+UserReview.create(user_id: "2", comment: "Made my life easier")
+
+puts "Done seeding...🌳🌳"
