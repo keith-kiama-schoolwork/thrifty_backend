@@ -1,18 +1,22 @@
 class UsersController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
-
+    before_action :authorize
+    skip_before_action :authorize, only: [:create]
+    
     def index
         users = User.all
-        render json: users,status: :ok,include: :account
+        render json: users,status: :ok
     end
 
     def show
         user = User.find_by!(id: params[:id])
-        render json: user,include: :account
+        render json: user
     end
 
     def create
         user = User.create!(user_params)
+        account_number = Faker::Bank.account_number(digits: 10)
+        user.create_account!(account_number: account_number)
         render json: user, status: :created
     end
 
@@ -37,4 +41,9 @@ class UsersController < ApplicationController
     def user_params
         params.permit(:name,:email,:password)
     end
+
+    def authorize
+        return render json: {message: "Kindly Login"} unless session.include? :user_id
+    end
+
 end

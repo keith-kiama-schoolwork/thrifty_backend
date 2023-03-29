@@ -30,14 +30,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_28_111415) do
   end
 
   create_table "user_reviews", force: :cascade do |t|
-    t.string "user_id"
-    t.string "comment"
+    t.string "user_id", null: false
+    t.string "comment", null: false
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.string "password"
+    t.string "password_digest"
   end
 
 end

@@ -1,6 +1,6 @@
 class AccountsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
-
+  
     def index
         accounts = Account.all
         render json: accounts,status: :ok
@@ -8,7 +8,7 @@ class AccountsController < ApplicationController
 
     def show
         account = Account.find_by!(id: params[:id])
-        render json: account, include: :user
+        render json: account
     end
 
     def destroy
