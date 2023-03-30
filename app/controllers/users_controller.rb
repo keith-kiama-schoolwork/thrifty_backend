@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
-    # before_action :authorize
-    # skip_before_action :authorize, only: [:create]
+    rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
+    before_action :authorize
+    skip_before_action :authorize, only: [:create]
     
     def index
         users = User.all
@@ -44,6 +45,10 @@ class UsersController < ApplicationController
 
     def authorize
         return render json: {message: "Kindly Login"} unless session.include? :user_id
+    end
+
+    def render_unprocessable_entity(exception)
+        render json: {errors: exception.record.errors.full_messages},status: :unprocessable_entity
     end
 
 end
