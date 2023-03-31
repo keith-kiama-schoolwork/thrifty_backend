@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
-    skip_before_action :authorize, only: [:create,:index]
+    before_action :authorize
+    skip_before_action :authorize, only: [:create]
 
 
     def index
