@@ -32,7 +32,7 @@ module ThriftyBackend
         origins '*'
         resource '*', headers: :any, methods: [:get, :post,:delete,:patch, :options], credentials: false
       end
-    endse
+    end
 
   end
 end
