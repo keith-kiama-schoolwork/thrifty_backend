@@ -7,10 +7,10 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins "example.com"
-
-    resource "*",
-      headers: :any,
-      methods: [:get, :post, :put, :patch, :delete, :options, :head]
+    origins '*' # this allows requests from any origin, you can replace it with a specific origin(s) if needed
+    resource '*', # this allows requests to any path
+      headers: :any, # this allows any headers to be sent in the request
+      methods: [:get, :post, :put, :patch, :delete, :options, :head] # this allows the specified HTTP methods to be used
   end
 end
+

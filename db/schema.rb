@@ -19,6 +19,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_28_111415) do
   create_table "product_reviews", force: :cascade do |t|
     t.string "product_id"
     t.string "user_id"
+    t.string "user_image"
     t.string "comment"
   end
 
@@ -31,12 +32,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_28_111415) do
 
   create_table "user_reviews", force: :cascade do |t|
     t.string "user_id", null: false
+    t.string "user_image"
     t.string "comment", null: false
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
+    t.string "image_url"
     t.string "password_digest"
   end
 
