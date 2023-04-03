@@ -25,15 +25,14 @@ module ThriftyBackend
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
     config.action_dispatch.cookies_same_site_protection = :strict
+    config.api_only = true
 
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins '*'
         resource '*', headers: :any, methods: [:get, :post,:delete,:patch, :options], credentials: false
       end
-    end
-
-    config.api_only = true
+    endse
 
   end
 end
